@@ -1,35 +1,41 @@
-<div class="uk-container uk-margin-small-bottom">
-  <div class="uk-card uk-card-default">
-  <div class="uk-card-header">
+<div class="uk-container uk-margin-medium-bottom ">
+  <div class="uk-card uk-card-default ">
+    <div class="uk-card-header">
       <div class="uk-grid-small uk-flex-middle" uk-grid>
-          <div class="uk-width-auto">
-              <img class="uk-border-circle" width="40" height="40" src="https://getuikit.com/docs/images/avatar.jpg">
-          </div>
-          <div class="uk-width-expand">
-              <h3 class="uk-card-title uk-margin-remove-bottom">
-                {{eventInput.name}}
-                <span class="uk-card-badge uk-label">
-                {{eventInput.price}}
-                </span>
-              </h3>
-              <p class="uk-text-meta uk-margin-remove-top">
-                <span *ngIf="eventInput?.location">
-                    Location {{eventInput.location?.address}},
-                    {{eventInput.location?.city}},
-                    {{eventInput.location?.country}}
-                </span>|
-                <span *ngIf="eventInput?.onlineUrl">
-                    Online URL: {{eventInput.onlineUrl}}
-                </span>|
-                <span>
-                  {{eventInput.date}} at
-                  {{eventInput.time}}
-                </span>
-              </p>
-          </div>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle" width="40" height="40" src="https://getuikit.com/docs/images/avatar.jpg">
+        </div>
+        <h3 class="uk-card-title uk-margin-remove-bottom">
+          {{eventInput.name}}
+        </h3>
       </div>
-  </div>
+    </div>
 
+    <div class="uk-card-body">
+      <p class="uk-text-meta uk-margin-remove-top">Price: {{eventInput.price}}</p>
+      <p class="uk-text-meta uk-margin-remove-top">
+        <span [hidden]="!eventInput?.location">
+          Location: {{eventInput.location?.address}},
+          {{eventInput.location?.city}},
+          {{eventInput.location?.country}}
+        </span>
+        <span [hidden]="!eventInput?.onlineUrl">
+            Online URL: {{eventInput.onlineUrl}}
+        </span>
+      </p>
+      <div [ngSwitch]="eventInput?.time">
+          <span *ngSwitchCase="'8:00 am'" class="uk-label uk-card-badge uk-label-warning">Early Start</span>
+          <span *ngSwitchDefault class="uk-label uk-card-badge uk-label-success">Normal Start</span>
+          <span *ngSwitchCase="'10:00 am'" class="uk-label uk-card-badge uk-label-danger">Late Start</span>
+      </div>
+    </div>
+    <div class="uk-card-footer uk-background-muted uk-dark">
+      <p>
+        <span uk-icon="icon: calendar" class="uk-text-middle"></span>
+        <span class="uk-text-small uk-margin-right"> {{eventInput.date}}</span>
+        <span uk-icon="icon: clock" class="uk-text-top"></span>
+        <span class="uk-text-small"> {{eventInput.time}}</span>
+      </p>
+    </div>
   </div>
 </div>
-
