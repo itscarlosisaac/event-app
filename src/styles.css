@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.uk-100{
+  font-weight: 100;
+}
+
+.uk-navbar-transparent{
+  background: #f8f8f8;
+}
+

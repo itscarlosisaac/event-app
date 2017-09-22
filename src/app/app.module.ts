@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { EventListComponent } from './events/events.list.component'
 import { EventSingleComponent } from './events/event.single.component'
 
+// NavBar Component
+import { NavbarComponent } from './nav/navbar.component'
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { EventSingleComponent } from './events/event.single.component'
   declarations: [
     AppComponent,
     EventListComponent,
-    EventSingleComponent
+    EventSingleComponent,
+    NavbarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
