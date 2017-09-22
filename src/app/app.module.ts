@@ -18,6 +18,10 @@ import { NotificationService } from './common/notifications.service'
 // Routes
 import { appRoutes } from './routes'
 
+// errors
+import { Error404Component } from './errors/404.component'
+import { EventRouteActivator } from './event.details/event.route.activator.service'
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,9 +33,10 @@ import { appRoutes } from './routes'
     EventSingleComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    NavbarComponent
+    NavbarComponent,
+    Error404Component
   ],
-  providers: [ EventsService, NotificationService ],
+  providers: [ EventsService, NotificationService, EventRouteActivator ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
