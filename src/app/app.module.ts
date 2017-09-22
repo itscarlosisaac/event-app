@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { EventListComponent } from './events/events.list.component'
 import { EventSingleComponent } from './events/event.single.component'
+import { EventDetailsComponent } from './event.details/event.details.component'
 
 // NavBar Component
 import { NavbarComponent } from './nav/navbar.component'
@@ -22,6 +23,7 @@ import { NotificationService } from './common/notifications.service'
     AppComponent,
     EventListComponent,
     EventSingleComponent,
+    EventDetailsComponent,
     NavbarComponent
   ],
   providers: [ EventsService, NotificationService ],
