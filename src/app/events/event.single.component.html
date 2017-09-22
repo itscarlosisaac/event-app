@@ -1,4 +1,4 @@
-<div class="uk-container">
+<div class="uk-container uk-margin-small-bottom">
   <div class="uk-card uk-card-default">
   <div class="uk-card-header">
       <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -13,9 +13,14 @@
                 </span>
               </h3>
               <p class="uk-text-meta uk-margin-remove-top">
-                {{eventInput.locations.address}},
-                {{eventInput.locations.city}},
-                {{eventInput.locations.country}}  |
+                <span *ngIf="eventInput?.location">
+                    Location {{eventInput.location?.address}},
+                    {{eventInput.location?.city}},
+                    {{eventInput.location?.country}}
+                </span>|
+                <span *ngIf="eventInput?.onlineUrl">
+                    Online URL: {{eventInput.onlineUrl}}
+                </span>|
                 <span>
                   {{eventInput.date}} at
                   {{eventInput.time}}
