@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { EventListComponent } from './events/events.list.component'
 import { EventSingleComponent } from './events/event.single.component'
+import { CreateEventComponent } from './events/create.event.component'
 import { EventDetailsComponent } from './event.details/event.details.component'
 
 // NavBar Component
@@ -27,6 +28,7 @@ import { appRoutes } from './routes'
     EventListComponent,
     EventSingleComponent,
     EventDetailsComponent,
+    CreateEventComponent,
     NavbarComponent
   ],
   providers: [ EventsService, NotificationService ],
