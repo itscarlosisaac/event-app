@@ -14,10 +14,13 @@ import { EventsService } from './events/shared/events.service'
 // Services
 import { NotificationService } from './common/notifications.service'
 
+// Routes
+import { appRoutes } from './routes'
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    appRoutes
   ],
   declarations: [
     AppComponent,
