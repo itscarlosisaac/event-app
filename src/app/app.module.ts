@@ -36,7 +36,23 @@ import { EventRouteActivator } from './event.details/event.route.activator.servi
     NavbarComponent,
     Error404Component
   ],
-  providers: [ EventsService, NotificationService, EventRouteActivator ],
+  providers: [
+    EventsService,
+    NotificationService,
+    EventRouteActivator,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Check the state of the form for the usear leaving the page when the form is dirty
+function checkDirtyState(component: CreateEventComponent ){
+  if( component.isDirty ){
+    return window.confirm('Yoy have not saved this event, do you really want to cancel?')
+  }
+  return true;
+}
