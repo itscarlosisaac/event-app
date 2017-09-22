@@ -2,6 +2,7 @@
   <h1 class="uk-100">Upcomming Event </h1>
   <event-single
     *ngFor="let event of events"
+    (click)="handleSingleClick(event.name)"
     [eventInput]="event">
   </event-single>
   <hr>
