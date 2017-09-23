@@ -9,14 +9,15 @@ import { NotificationService } from '../common/notifications.service'
 })
 
 export class EventListComponent implements OnInit {
-  events:any[]
+  events:any
   constructor(
     private eventsService: EventsService,
     private notification: NotificationService )
   { }
 
   ngOnInit(){
-    this.events = this.eventsService.getEvents();
+    // this.events = this.eventsService.getEvents();
+    this.eventsService.getEvents().subscribe( events => this.events = events )
   }
 
   handleSingleClick(eventName){
