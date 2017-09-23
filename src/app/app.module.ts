@@ -36,7 +36,18 @@ import { EventRouteActivator } from './event.details/event.route.activator.servi
     NavbarComponent,
     Error404Component
   ],
-  providers: [ EventsService, NotificationService, EventRouteActivator ],
+  providers: [
+    EventsService,
+    NotificationService,
+    EventRouteActivator,
+    { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState}
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+function checkDirtyState(component: CreateEventComponent){
+  if( component.isDirty )
+    return window.confirm('You have not save this event, do you really want to cancel?')
+  return true;
+}
