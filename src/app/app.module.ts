@@ -38,7 +38,6 @@ import { EventListResolver } from './events/events.list.resolver.service'
     NavbarComponent,
     Error404Component
   ],
-<<<<<<< HEAD
   providers: [
     EventsService,
     NotificationService,
@@ -46,37 +45,14 @@ import { EventListResolver } from './events/events.list.resolver.service'
     EventListResolver,
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
    ],
-||||||| merged common ancestors
-  providers: [ EventsService, NotificationService, EventRouteActivator ],
-=======
-  providers: [
-    EventsService,
-    NotificationService,
-    EventRouteActivator,
-    {
-      provide: 'canDeactivateCreateEvent',
-      useValue: checkDirtyState
-    }
-  ],
->>>>>>> master
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-<<<<<<< HEAD
-
-export function checkDirtyState(component: CreateEventComponent){
-  if( component.isDirty )
-    return window.confirm('You have not save this event, do you really want to cancel?')
-  return true;
-}
-||||||| merged common ancestors
-=======
 
 // Check the state of the form for the usear leaving the page when the form is dirty
-function checkDirtyState(component: CreateEventComponent ){
+export function checkDirtyState(component: CreateEventComponent ){
   if( component.isDirty ){
     return window.confirm('Yoy have not saved this event, do you really want to cancel?')
   }
   return true;
 }
->>>>>>> master
