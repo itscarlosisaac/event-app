@@ -12,6 +12,8 @@ import { UserModule } from  './user/user.module'
 export const router:Routes = [
   { path: 'events/new', component: CreateEventComponent, canDeactivate:['canDeactivateCreateEvent'] },
   { path: 'events', component: EventListComponent, resolve: { events:EventListResolver } },
+  { path: 'events/new', component: CreateEventComponent },
+  { path: 'events', component: EventListComponent },
   { path: 'events/:id' , component: EventDetailsComponent, canActivate: [EventRouteActivator] },
   { path: '404', component: Error404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
